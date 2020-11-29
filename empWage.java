@@ -1,6 +1,8 @@
 package com.empwage.company;
 
-public class EmployeeWage
+import java.util.*;
+
+class EmployeeWage
 {
 	final int IS_PART_TIME=1;
 	final int IS_FULL_TIME=2;
@@ -35,13 +37,17 @@ public class EmployeeWage
 	{
 		System.out.println("Welcome to employee wage");
 		EmployeeWage eWage=new EmployeeWage();
-		companyEmployeeWage compEmpWage[]=new companyEmployeeWage[10];
-		compEmpWage[0]=new companyEmployeeWage("Wipro",40,20,100);
-		eWage.wageCompute(compEmpWage[0]);
-		compEmpWage[1]=new companyEmployeeWage("Tcs",30,23,90);
-		eWage.wageCompute(compEmpWage[1]);
-		compEmpWage[2]=new companyEmployeeWage("Abc",29,25,99);
-		eWage.wageCompute(compEmpWage[2]);
+		ArrayList<companyEmployeeWage> company = new ArrayList<companyEmployeeWage>();
+
+		company.add( new companyEmployeeWage("ABC",40,20,100));
+		eWage.wageCompute(company.get(0));
+
+		company.add( new companyEmployeeWage("DEF", 30,22,110));
+		eWage.wageCompute(company.get(1));
+
+		company.add( new companyEmployeeWage("GHI",33,18,101));
+		eWage.wageCompute(company.get(2));
+
 	}
 }
 
